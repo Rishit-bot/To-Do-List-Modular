@@ -1,13 +1,15 @@
+import chalk from "chalk"
+
 const args: string[] = process.argv.slice(2);
 
 
 if (args.length === 0) {
-    console.log("No arguments provided.");
-    console.log("type help for list of commands)");
+    console.log(chalk.red("No arguments provided."));
+    console.log(chalk.blue("type help for list of commands"));
 } else {
-    console.log("Arguments passed:");
+    console.log(chalk.green("Arguments passed:"));
     args.forEach((arg, index) => {
-        console.log(`Arg ${index + 1}: ${arg}`);
+        console.log(chalk.green(`Arg ${index + 1}: ${arg}`));
     });
 }
 let command = args[0]?.toLowerCase()

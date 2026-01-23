@@ -3,12 +3,13 @@
     import { json } from './classToDOList';
     import { makeItem, toggleStatus, removeItem } from './functions';
     import { create } from './fileHandler';
+    import chalk from "chalk"
 
 
     if (command == "help") {
-        console.log("1.)Add \"status\" \"title\" ");
-        console.log("2.)Remove ID");
-        console.log("3.)Toggle ID");
+        console.log(chalk.red("1.)Add", chalk.blue("\"status\" \"title\" ")));
+        console.log(chalk.red("2.)Remove", chalk.blue("ID")));
+        console.log(chalk.red("3.)Toggle", chalk.blue("ID")));
 
     } // REMOVE 
     else if (command == "remove") {
