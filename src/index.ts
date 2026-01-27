@@ -38,6 +38,15 @@
             makeItem(title, status.Completed)
 
         }
+    } // View List
+    else if (command == "view") {
+        console.log(chalk.yellow("Your To-Do List:"))
+        for (const obj of json) {
+            console.log(chalk.green(`${obj.id}`) + chalk.red(` - ${obj.title}`) + chalk.cyan(` - ${obj.status}`))
+        }
+    } else {
+        console.log(chalk.red("Invalid Command"))
+        console.log(chalk.blue("type help for list of commands"))
     }
 
     const jsonDB = JSON.stringify(json)
