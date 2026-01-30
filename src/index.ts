@@ -4,7 +4,7 @@
     import { makeItem, toggleStatus, removeItem } from './functions';
     import { create } from './fileHandler';
     import chalk from "chalk"
-
+    import { createAndPopulateExcel } from './excelHandler';    
 
     if (command == "help") {
         console.log(chalk.red("1.)Add", chalk.blue("\"status\" \"title\" ")));
@@ -52,6 +52,7 @@
     const jsonDB = JSON.stringify(json)
     create("data.json", jsonDB)
     create('todo.txt', '')
+    createAndPopulateExcel()
     for (const obj of json) {
         fs.appendFileSync('todo.txt', `${obj.id} - ${obj.title} - ${obj.status}; \n`, 'utf-8')
     }
